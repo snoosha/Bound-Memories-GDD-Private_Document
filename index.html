@@ -777,7 +777,7 @@ main, footer { margin-left: 0; }
   <!-- HERO -->
 
   <div class="hero">
-    <div class="hero-eyebrow">Game Design Document · Version 5.6</div>
+    <div class="hero-eyebrow">Game Design Document · Version 5.7</div>
     <h1>BOUND MEMORIES</h1>
     <div class="hero-subtitle">Puzzle-Combat Adventure · Dark Fantasy Narrative</div>
     <div class="hero-quote">"An amnesiac necromancer wakes inside their own prison, retraces a past they deliberately erased, and must confront the consequence of what they once did."</div>
@@ -1603,7 +1603,7 @@ main, footer { margin-left: 0; }
 </main>
 
 <footer>
-  Bound Memories — Game Design Document v5.6 &nbsp;·&nbsp; For personal development and school submission use
+  Bound Memories — Game Design Document v5.7 &nbsp;·&nbsp; For personal development and school submission use
 </footer>
 
 <a href="#top" class="scroll-top" title="Back to top">↑</a>
@@ -1857,17 +1857,21 @@ main, footer { margin-left: 0; }
       wCtx.fillStyle = '#e03c3c';
       wCtx.fill();
 
-      // Purple waveform overlay
-      const sliceW = ww / timeData.length;
-      let x = 0;
-      wCtx.beginPath();
-      for (let i = 0; i < timeData.length; i++) {
+      // Purple waveform overlay — smooth sine-like line
+      const waveStep = Math.max(1, Math.floor(timeData.length / 128));
+      const pts = [];
+      for (let i = 0; i < timeData.length; i += waveStep) {
         const v = (timeData[i] / 128.0) - 1.0;
-        const y = midY + v * (wh * 0.46);
-        if (i === 0) wCtx.moveTo(x, y);
-        else wCtx.lineTo(x, y);
-        x += sliceW;
+        pts.push({ x: (i / timeData.length) * ww, y: midY + v * (wh * 0.44) });
       }
+      wCtx.beginPath();
+      wCtx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 1; i < pts.length - 1; i++) {
+        const mx = (pts[i].x + pts[i + 1].x) / 2;
+        const my = (pts[i].y + pts[i + 1].y) / 2;
+        wCtx.quadraticCurveTo(pts[i].x, pts[i].y, mx, my);
+      }
+      wCtx.lineTo(pts[pts.length - 1].x, pts[pts.length - 1].y);
       // Played = bright purple, unplayed = dim purple
       const wGrad = wCtx.createLinearGradient(0, 0, ww, 0);
       wGrad.addColorStop(0, 'rgba(180, 120, 255, 0.85)');
@@ -1875,7 +1879,9 @@ main, footer { margin-left: 0; }
       wGrad.addColorStop(Math.min(pct + 0.001, 1), 'rgba(100, 80, 160, 0.35)');
       wGrad.addColorStop(1, 'rgba(80, 60, 140, 0.25)');
       wCtx.strokeStyle = wGrad;
-      wCtx.lineWidth = 1.8;
+      wCtx.lineWidth = 2.5;
+      wCtx.lineJoin = 'round';
+      wCtx.lineCap = 'round';
       wCtx.stroke();
 
       // --- Frequency bars (right canvas) ---
