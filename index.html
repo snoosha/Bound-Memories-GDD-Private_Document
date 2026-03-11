@@ -476,42 +476,24 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    justify-content: center;
     min-width: 0;
   }
 
-  .bm-waveform-wrap {
+  .bm-progress-wave-wrap {
     width: 100%;
-    height: 28px;
+    height: 44px;
     position: relative;
     cursor: pointer;
     border-radius: 3px;
     overflow: hidden;
-    background: rgba(123, 94, 168, 0.06);
+    background: transparent;
   }
 
   .bm-waveform {
     width: 100%;
     height: 100%;
     display: block;
-  }
-
-  .bm-progress-wrap {
-    width: 100%;
-    height: 3px;
-    background: var(--border2);
-    border-radius: 2px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .bm-progress-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, var(--accent), var(--purple));
-    border-radius: 2px;
-    pointer-events: none;
   }
 
   .bm-freq {
@@ -789,7 +771,7 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-eyebrow">Game Design Document · Version 5.0</div>
+    <div class="hero-eyebrow">Game Design Document · Version 5.5</div>
     <h1>BOUND MEMORIES</h1>
     <div class="hero-subtitle">Puzzle-Combat Adventure · Dark Fantasy Narrative</div>
     <div class="hero-quote">"An amnesiac necromancer wakes inside their own prison, retraces a past they deliberately erased, and must confront the consequence of what they once did."</div>
@@ -1020,8 +1002,7 @@
         <div class="bm-player" data-src="songs/examples/drums_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1044,8 +1025,7 @@
         <div class="bm-player" data-src="songs/examples/violin_high_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1068,8 +1048,7 @@
         <div class="bm-player" data-src="songs/examples/violin_low_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1092,8 +1071,7 @@
         <div class="bm-player" data-src="songs/examples/cello_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1116,8 +1094,7 @@
         <div class="bm-player" data-src="songs/examples/guitar_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1140,8 +1117,7 @@
         <div class="bm-player" data-src="songs/examples/bass_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1164,8 +1140,7 @@
         <div class="bm-player" data-src="songs/examples/metalpipe_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1188,8 +1163,7 @@
         <div class="bm-player" data-src="songs/examples/lick_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1212,8 +1186,7 @@
       <div class="bm-player" data-src="songs/examples/harmony_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1248,8 +1221,7 @@
       <div class="bm-player" data-src="songs/examples/mirrorworld_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1297,8 +1269,7 @@
       <div class="bm-player" data-src="songs/examples/kytti_idle.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1310,8 +1281,7 @@
       <div class="bm-player" data-src="songs/examples/kytti_battle.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1375,8 +1345,7 @@
       <div class="bm-player" data-src="songs/examples/bossfight_example.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1397,8 +1366,7 @@
           <div class="bm-player" data-src="songs/examples/ending_seal.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1414,8 +1382,7 @@
           <div class="bm-player" data-src="songs/examples/ending_amulet.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1466,8 +1433,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_charcreation.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1478,8 +1444,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_opening.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1490,8 +1455,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_early.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1502,8 +1466,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_mid.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1514,8 +1477,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_late.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1526,8 +1488,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_tavern.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1538,8 +1499,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_mirrorworld.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1550,8 +1510,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_preboss.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1562,8 +1521,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_boss.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1574,8 +1532,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_rat_sample.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1586,8 +1543,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/ending_seal.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1598,8 +1554,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/ending_amulet.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1610,8 +1565,7 @@
         <div class="track-audio"><div class="bm-player" data-src="songs/examples/track_credits.ogg">
         <button class="bm-circle-btn" aria-label="Play/Pause"><canvas width="104" height="104"></canvas></button>
         <div class="bm-center">
-          <div class="bm-waveform-wrap"><canvas class="bm-waveform"></canvas></div>
-          <div class="bm-progress-wrap"><div class="bm-progress-fill"></div></div>
+          <div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div>
         </div>
         <canvas class="bm-freq" width="112" height="104"></canvas>
         <div class="bm-time">0:00</div>
@@ -1641,7 +1595,7 @@
 </main>
 
 <footer>
-  Bound Memories — Game Design Document v5.0 &nbsp;·&nbsp; For personal development and school submission use
+  Bound Memories — Game Design Document v5.5 &nbsp;·&nbsp; For personal development and school submission use
 </footer>
 
 <a href="#top" class="scroll-top" title="Back to top">↑</a>
@@ -1671,8 +1625,6 @@
     const circleBtn = wrapper.querySelector('.bm-circle-btn');
     const circleCanvas = circleBtn.querySelector('canvas');
     const waveCanvas = wrapper.querySelector('.bm-waveform');
-    const progressWrap = wrapper.querySelector('.bm-progress-wrap');
-    const progressFill = wrapper.querySelector('.bm-progress-fill');
     const freqCanvas = wrapper.querySelector('.bm-freq');
     const timeEl = wrapper.querySelector('.bm-time');
 
@@ -1712,15 +1664,12 @@
 
       audio.addEventListener('timeupdate', () => {
         if (audio.duration) {
-          const pct = (audio.currentTime / audio.duration) * 100;
-          progressFill.style.width = pct + '%';
           timeEl.textContent = formatTime(audio.currentTime);
         }
       });
 
       audio.addEventListener('ended', () => {
         isPlaying = false;
-        progressFill.style.width = '0%';
         timeEl.textContent = formatTime(audio.duration);
         cancelAnimationFrame(rafId);
         drawIdle(false);
@@ -1732,8 +1681,10 @@
       const ctx = getCtx();
       sourceNode = ctx.createMediaElementSource(audio);
       analyser = ctx.createAnalyser();
-      analyser.fftSize = 256;
-      analyser.smoothingTimeConstant = 0.8;
+      analyser.fftSize = 512;
+      analyser.smoothingTimeConstant = 0.6;
+      analyser.minDecibels = -85;
+      analyser.maxDecibels = -10;
       sourceNode.connect(analyser);
       analyser.connect(ctx.destination);
       freqData = new Uint8Array(analyser.frequencyBinCount);
@@ -1780,14 +1731,16 @@
         cCtx.fill();
       }
 
-      // Clear waveform and freq
+      // Clear waveform canvas — idle state
       const ww = waveCanvas.width, wh = waveCanvas.height;
       wCtx.clearRect(0, 0, ww, wh);
-      wCtx.strokeStyle = 'rgba(123,94,168,0.25)';
-      wCtx.lineWidth = 1.5;
+      const midY = wh / 2;
+      // White/grey baseline (full width)
       wCtx.beginPath();
-      wCtx.moveTo(0, wh / 2);
-      wCtx.lineTo(ww, wh / 2);
+      wCtx.moveTo(0, midY);
+      wCtx.lineTo(ww, midY);
+      wCtx.strokeStyle = 'rgba(200,200,220,0.25)';
+      wCtx.lineWidth = 2;
       wCtx.stroke();
 
       const fw = freqCanvas.width, fh = freqCanvas.height;
@@ -1839,7 +1792,7 @@
       const step = Math.floor(freqData.length / barCount);
 
       for (let i = 0; i < barCount; i++) {
-        const val = freqData[i * step] / 255;
+        const val = Math.min(1, (freqData[i * step] / 255) * 2.0);
         const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
         const barLen = innerR + val * (outerMax - innerR);
         const x1 = cx + Math.cos(angle) * innerR;
@@ -1868,39 +1821,54 @@
       cCtx.fillRect(cx - size * 0.14 - bw / 2, cy - bh / 2, bw, bh);
       cCtx.fillRect(cx + size * 0.05, cy - bh / 2, bw, bh);
 
-      // --- Waveform over progress bar ---
+      // --- Combined progress + waveform canvas ---
       const ww = waveCanvas.width, wh = waveCanvas.height;
       wCtx.clearRect(0, 0, ww, wh);
-
-      // Progress fill background (purple tint)
       const pct = audio.duration ? audio.currentTime / audio.duration : 0;
-      const grad = wCtx.createLinearGradient(0, 0, ww, 0);
-      grad.addColorStop(0, 'rgba(74,143,212,0.18)');
-      grad.addColorStop(Math.min(pct, 1), 'rgba(123,94,168,0.22)');
-      grad.addColorStop(Math.min(pct + 0.001, 1), 'rgba(255,255,255,0)');
-      grad.addColorStop(1, 'rgba(255,255,255,0)');
-      wCtx.fillStyle = grad;
-      wCtx.fillRect(0, 0, ww, wh);
+      const progressX = pct * ww;
+      const midY = wh / 2;
 
-      // Waveform line
-      wCtx.lineWidth = 1.5;
+      // Full white/grey baseline
       wCtx.beginPath();
+      wCtx.moveTo(0, midY);
+      wCtx.lineTo(ww, midY);
+      wCtx.strokeStyle = 'rgba(200,200,220,0.2)';
+      wCtx.lineWidth = 2;
+      wCtx.stroke();
+
+      // Red progress line (played portion of baseline)
+      wCtx.beginPath();
+      wCtx.moveTo(0, midY);
+      wCtx.lineTo(progressX, midY);
+      wCtx.strokeStyle = 'rgba(220, 60, 60, 0.9)';
+      wCtx.lineWidth = 2;
+      wCtx.stroke();
+
+      // Playhead dot
+      wCtx.beginPath();
+      wCtx.arc(progressX, midY, 5, 0, Math.PI * 2);
+      wCtx.fillStyle = '#e03c3c';
+      wCtx.fill();
+
+      // Purple waveform overlay
       const sliceW = ww / timeData.length;
       let x = 0;
+      wCtx.beginPath();
       for (let i = 0; i < timeData.length; i++) {
-        const v = timeData[i] / 128.0;
-        const y = (v * wh) / 2;
+        const v = (timeData[i] / 128.0) - 1.0;
+        const y = midY + v * (wh * 0.46);
         if (i === 0) wCtx.moveTo(x, y);
         else wCtx.lineTo(x, y);
         x += sliceW;
       }
-      // Colour: played portion purple/bright, unplayed dimmer
+      // Played = bright purple, unplayed = dim purple
       const wGrad = wCtx.createLinearGradient(0, 0, ww, 0);
-      wGrad.addColorStop(0, 'rgba(160,122,212,0.9)');
-      wGrad.addColorStop(pct, 'rgba(200,160,248,1.0)');
-      wGrad.addColorStop(Math.min(pct + 0.002, 1), 'rgba(74,100,160,0.4)');
-      wGrad.addColorStop(1, 'rgba(60,80,140,0.3)');
+      wGrad.addColorStop(0, 'rgba(180, 120, 255, 0.85)');
+      wGrad.addColorStop(Math.min(pct, 0.999), 'rgba(200, 140, 255, 0.95)');
+      wGrad.addColorStop(Math.min(pct + 0.001, 1), 'rgba(100, 80, 160, 0.35)');
+      wGrad.addColorStop(1, 'rgba(80, 60, 140, 0.25)');
       wCtx.strokeStyle = wGrad;
+      wCtx.lineWidth = 1.8;
       wCtx.stroke();
 
       // --- Frequency bars (right canvas) ---
@@ -1910,14 +1878,20 @@
       const bw2 = Math.floor(fw / numBars) - 1;
       const barStep = Math.floor(freqData.length / numBars);
       for (let i = 0; i < numBars; i++) {
-        const val2 = freqData[i * barStep] / 255;
-        const bh2 = Math.max(3, val2 * fh);
+        // Average a small range of bins for smoother bars
+        let sum = 0;
+        const range = 3;
+        for (let j = 0; j < range; j++) sum += freqData[i * barStep + j] || 0;
+        const raw = sum / (range * 255);
+        // Boost: scale up so even quiet audio fills decent height
+        const val2 = Math.min(1, raw * 2.2);
+        const bh2 = Math.max(4, val2 * fh * 0.96);
         const x2 = i * (bw2 + 1);
         const hue2 = 200 + (i / numBars) * 80;
-        fCtx.fillStyle = `hsla(${hue2}, 65%, ${40 + val2 * 35}%, ${0.5 + val2 * 0.5})`;
+        fCtx.fillStyle = `hsla(${hue2}, 70%, ${35 + val2 * 40}%, ${0.55 + val2 * 0.45})`;
         fCtx.fillRect(x2, fh - bh2, bw2, bh2);
         // Top cap
-        fCtx.fillStyle = `hsla(${hue2}, 80%, 75%, 0.9)`;
+        fCtx.fillStyle = `hsla(${hue2}, 90%, 78%, ${0.7 + val2 * 0.3})`;
         fCtx.fillRect(x2, fh - bh2 - 2, bw2, 2);
       }
 
@@ -1945,15 +1919,7 @@
 
     setTimeout(resizeCanvases, 50);
 
-    // Seek on progress bar click
-    progressWrap.addEventListener('click', (e) => {
-      if (!audio || !audio.duration) return;
-      const rect = progressWrap.getBoundingClientRect();
-      const pct = (e.clientX - rect.left) / rect.width;
-      audio.currentTime = pct * audio.duration;
-    });
-
-    // Seek on waveform click
+    // Seek on progress/waveform click
     waveCanvas.parentElement.addEventListener('click', (e) => {
       if (!audio || !audio.duration) return;
       const rect = waveCanvas.parentElement.getBoundingClientRect();
