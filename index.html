@@ -1742,13 +1742,18 @@ main, footer { margin-left: 0; }
       const ww = waveCanvas.width / dpr, wh = waveCanvas.height / dpr;
       wCtx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
       const midY = wh / 2;
-      // White/grey baseline (full width)
+      // Grey baseline visible at rest
       wCtx.beginPath();
       wCtx.moveTo(0, midY);
       wCtx.lineTo(ww, midY);
-      wCtx.strokeStyle = 'rgba(200,200,220,0.25)';
-      wCtx.lineWidth = 2;
+      wCtx.strokeStyle = 'rgba(180,180,200,0.5)';
+      wCtx.lineWidth = 3;
       wCtx.stroke();
+      // Small dot at start
+      wCtx.beginPath();
+      wCtx.arc(5, midY, 6, 0, Math.PI * 2);
+      wCtx.fillStyle = '#e03c3c';
+      wCtx.fill();
 
       const fw = freqCanvas.width / dpr, fh = freqCanvas.height / dpr;
       fCtx.clearRect(0, 0, freqCanvas.width, freqCanvas.height);
@@ -1835,25 +1840,27 @@ main, footer { margin-left: 0; }
       const progressX = pct * ww;
       const midY = wh / 2;
 
-      // Full white/grey baseline
+      // Full grey baseline — clearly visible
       wCtx.beginPath();
       wCtx.moveTo(0, midY);
       wCtx.lineTo(ww, midY);
-      wCtx.strokeStyle = 'rgba(200,200,220,0.2)';
-      wCtx.lineWidth = 2;
+      wCtx.strokeStyle = 'rgba(180,180,200,0.5)';
+      wCtx.lineWidth = 3;
       wCtx.stroke();
 
-      // Red progress line (played portion of baseline)
-      wCtx.beginPath();
-      wCtx.moveTo(0, midY);
-      wCtx.lineTo(progressX, midY);
-      wCtx.strokeStyle = 'rgba(220, 60, 60, 0.9)';
-      wCtx.lineWidth = 2;
-      wCtx.stroke();
+      // Red progress line — bright and obvious
+      if (progressX > 0) {
+        wCtx.beginPath();
+        wCtx.moveTo(0, midY);
+        wCtx.lineTo(progressX, midY);
+        wCtx.strokeStyle = '#e03c3c';
+        wCtx.lineWidth = 3;
+        wCtx.stroke();
+      }
 
       // Playhead dot
       wCtx.beginPath();
-      wCtx.arc(progressX, midY, 5, 0, Math.PI * 2);
+      wCtx.arc(Math.max(5, progressX), midY, 6, 0, Math.PI * 2);
       wCtx.fillStyle = '#e03c3c';
       wCtx.fill();
 
