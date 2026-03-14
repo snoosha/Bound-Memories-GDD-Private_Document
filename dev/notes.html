@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0a0b0f;color:#d4d8e8;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bound Memories — Detailed Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-title">Bound Memories</div>
+  <div class="nav-title" style="font-size:10px;opacity:0.6;margin-top:-8px;padding-bottom:8px;">Detailed Reference</div>
+  <a href="#top">Overview</a>
+  <a href="#sword" class="section-link">The Sword</a>
+  <a href="#secondshadow" class="section-link">The Second Shadow</a>
+  <a href="#holomap" class="section-link">Holographic Map</a>
+  <a href="#sargentlaw" class="section-link">Sargent LAW</a>
+  <a href="#mafia" class="section-link">Mafia Boss</a>
+  <a href="#kytti" class="section-link">Kytti</a>
+  <a href="#crystal" class="section-link">The … Crystal</a>
+  <a href="#figurines" class="section-link">Figurines</a>
+  <a href="#rats" class="section-link">Rat Side Quests</a>
+  <a href="#bossfight" class="section-link">The Boss Fight</a>
+  <a href="#endings" class="section-link">The Endings</a>
+  <a href="#music" class="section-link">Music Plan</a>
+  <a href="#credits" class="section-link">Credits</a>
+</nav>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="hero-eyebrow">Detailed Reference Document · Not for Submission</div>
+    <h1>BOUND MEMORIES</h1>
+    <div class="hero-subtitle">Extended Design Notes & Cut GDD Content</div>
+    <div class="hero-quote">"Everything that didn't make it into the submission GDD — kept here so nothing gets forgotten."</div>
+  </div>
+
+  <div class="note-box" style="margin:24px 32px;">This document contains all the detailed design content removed from the main GDD for submission. It uses the same styling and audio player system. Keep this alongside the main GDD during development.</div>
+
+  <hr class="divider">
+
+  <!-- SWORD -->
+  <div class="section-banner" id="sword">
+    <div class="section-banner-num">The Weapon</div>
+    <h2>The Sword — Soul-Forged Blade</h2>
+  </div>
+
+  <p>Before sealing themselves away, the player character forged a sword from the souls of musicians. It was present when they woke with no memory. The book has no entry explaining it — past-you considered it too obvious to document, or too personal.</p>
+  <p>The sword is the only weapon in the game and the entire diegetic UI for the combat system. There is no HUD. The blade communicates everything.</p>
+
+  <h2 class="subsection">Visual Behaviour</h2>
+  <ul>
+    <li><strong>Beat window glow:</strong> The blade brightens as the beat approaches and dims between hits. The glow is the metronome — no separate indicator needed.</li>
+    <li><strong>Instrument colour:</strong> The blade's colour shifts to match whichever instrument is currently dominant in the music. Purple for bass, blue for electric guitar, pale blue-white for violin high register, deep blue for violin low register, brown-gold for cello, white for drums. The player learns to read the colour without thinking about it.</li>
+    <li><strong>Hit feedback:</strong> A correct on-beat hit produces a brilliant flare along the full length of the blade. A miss makes it flicker and briefly darken — a visual wince.</li>
+    <li><strong>Soul wisps:</strong> Small particles of light orbit the blade at all times. Their orbit speed increases as the beat approaches and slows just after — a secondary beat indicator for players who find colour harder to read. On a successful hit they briefly scatter outward then return. The number of wisps currently orbiting shows the current hit combo — they accumulate with each consecutive hit and scatter on a miss.</li>
+    <li><strong>Harmony:</strong> When a harmony window opens, all the wisps briefly align into a single orbit pattern and the blade cycles through all active instrument colours rapidly. The visual is distinct enough that players who aren't listening can still recognise a harmony window is open.</li>
+  </ul>
+
+  <h2 class="subsection">Health — The Cloak</h2>
+  <p>The player character's cloak shows health. At full health it is whole and dark. As damage accumulates it becomes more tattered — threads loose, edges frayed, fabric faded. At very low health it is almost translucent. The sword and cloak together replace every HUD element that a traditional game would show on screen.</p>
+
+  <h2 class="subsection">Lore Notes</h2>
+  <p>The souls in the blade are not named and are never explained. The book has no entry for the sword. Past-you left no instructions about it. A player who examines it gets a single line of flavour text — something non-explanatory, written in the same tone as the rest of the book. The sword's nature is part of what the player character did before sealing themselves away. It is one of the things the ending makes sense of.</p>
+  <div class="book-quote">"You'll know what this is for."</div>
+
+  <hr class="divider">
+
+  <!-- SECOND SHADOW -->
+  <div class="section-banner" id="secondshadow">
+    <div class="section-banner-num">Diegetic Detail</div>
+    <h2>The Second Shadow</h2>
+  </div>
+
+  <p>In the mirror world, the player character has two shadows. The second one is behind the first — slightly offset, slightly wrong. It has been there since the beginning of the game but is easy to miss early on when it is faint.</p>
+  <p>As the guardian eyes get closer throughout the game, the second shadow becomes more prominent. By the midpoint it moves a fraction of a second after the player. By the final area it moves independently for brief moments — turning its head when the player does not, pausing when the player walks.</p>
+  <p>The game never acknowledges it. There is no bestiary entry, no book entry, no NPC comment. It is simply there, getting more present. Whether it is connected to the guardian eyes, to what the player character did, or to something else entirely is never stated.</p>
+  <div class="note-box">This should never feel like a puzzle to solve — it should feel like something you noticed that you wish you hadn't.</div>
+
+  <hr class="divider">
+
+  <!-- HOLOGRAM MAP -->
+  <div class="section-banner" id="holomap">
+    <div class="section-banner-num">Book Feature</div>
+    <h2>The Holographic Map</h2>
+  </div>
+
+  <p>When the player opens the map page of the book, a small holographic projection rises from the page — a three-dimensional rotating map of the Citadel. It is unexplained why past-you's book contains this. It is not commented on.</p>
+  <p>Fog of war — areas not yet visited are dark and unrendered. As the player explores, the hologram fills in. The map rotates slowly by default and can be tilted and spun by the player. Key discovered locations are marked with small glowing indicators.</p>
+  <p>In the mirror world, the map renders in cold blue and shows locations that do not exist in the real world. Some are puzzle rooms. Some are simply places. A few are marked with indicators that have no real-world equivalent and are never explained.</p>
+  <div class="note-box">⚠ Technically complex for GameMaker — a fake 3D projection using sprite scaling and layering. Prototype this early to confirm it's within scope.</div>
+
+  <hr class="divider">
+
+  <!-- SARGENT LAW -->
+  <div class="section-banner" id="sargentlaw">
+    <div class="section-banner-num">NPC</div>
+    <h2>Sargent LAW</h2>
+  </div>
+
+  <p>Sargent LAW is the Citadel's law enforcement officer. He is technically the most effective officer in the Citadel by body count — unfortunately the bodies are almost exclusively his fellow officers. His wide area attacks are genuinely powerful. His situational awareness is not.</p>
+  <p>He exists as ambient world-building. Other NPCs complain about him. You can observe him in the background causing chaos. He is not a story character and does not serve a plot purpose. He makes the Citadel feel like a place where people actually live and suffer the consequences.</p>
+
+  <h2 class="subsection">SargeRAXBY</h2>
+  <p>Sargent LAW had a brother — SargeRAXBY. The player character killed him during their escape from imprisonment, before losing their memories. They killed him for fun. The game never states this directly. Sargent LAW screaming "FOR MY BROTHER" at the start of the duel is the only reference to it. Players who are paying attention will piece it together.</p>
+  <p>This is one of several details that reframes the player character as genuinely dangerous rather than simply powerful. They did not seal themselves away for nothing.</p>
+
+  <h2 class="subsection">The Duel</h2>
+  <p>At some point the player accidentally breaks a rule — the exact infraction is minor and arbitrary, such as entering the market on a Tuesday. Sargent LAW challenges them to a duel, shouting "FOR MY BROTHER." This is non-optional.</p>
+  <p>During the duel, Sargent LAW uses wide AOE attacks that deal damage to everything in range — including his own backup officers, who he systematically incapacitates over the course of the fight. The player wins not because they outskill him but because by the end of the duel he has eliminated most of his own support. He probably considers it a respectable loss. The game does not comment on any of this.</p>
+  <div class="note-box">The duel should feel genuinely threatening at first — the AOE attacks are real and hurt. The comedy comes from noticing what's happening to his teammates, not from him being obviously weak. The grief is real. The incompetence is also real. Both things are true.</div>
+
+  <hr class="divider">
+
+  <!-- MAFIA BOSS -->
+  <div class="section-banner" id="mafia">
+    <div class="section-banner-num">System 8</div>
+    <h2>Mafia Boss Storyline</h2>
+  </div>
+
+  <p>The Mafia Boss controls the Citadel. He is a large, physically imposing figure — deliberately intimidating — who wears a necklace and chains bearing his own eye symbol. He runs the Citadel through manufactured debts and enforced loyalty.</p>
+  <p>Early in the game, his henchmen approach the player in the tavern and press money into their hands — a fabricated loan for something they claim the player did. This debt is entirely invented. When the henchmen demand the player remove their hood to confirm identity, the player cannot comply — the book's rule forbids it. The player's unusually low vocal tone has already told the henchmen what they wanted to know, but neither side acknowledges this. One henchman begins to say "are you—" and is immediately cut off by the other.</p>
+  <p>The player is taken to the Mafia Boss's headquarters: a medium-sized office with a plush red chair, a grand desk, and various objects that can be examined with an investigate prompt (right click cancels the examine animation at any time). The boss explains the debt terms. The player may attempt to refuse — it does not matter. The debt is assigned regardless.</p>
+  <p>Later, during a second tavern visit, the Mafia Boss's henchmen return to collect. Annoyed by Kytti's music, they attack her. Kytti immediately and completely destroys them without warning or visible effort. She resumes playing, unbothered. The player pickpockets the loan money back from the wreckage. The debt is cleared.</p>
+  <p>After this, the player may optionally give items to the henchmen. There is no reward. There is no acknowledgement. The option exists.</p>
+
+  <div class="img-grid">
+    <div class="img-slot" data-img="images/character/mafia_boss.png" data-caption="Mafia Boss">
+      <div class="img-slot-label">Character — Mafia Boss</div>
+      <div class="img-slot-placeholder">images/character/mafia_boss.png<span>The Mafia Boss in his office</span></div>
+    </div>
+    <div class="img-slot" data-img="images/world/mafia_hq.png" data-caption="Mafia Boss HQ">
+      <div class="img-slot-label">World — Mafia HQ</div>
+      <div class="img-slot-placeholder">images/world/mafia_hq.png<span>The plush office interior</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KYTTI -->
+  <div class="section-banner" id="kytti">
+    <div class="section-banner-num">System 9</div>
+    <h2>Kytti</h2>
+  </div>
+
+  <p>Kytti is a large, round, cream-coloured cat who sits on a stool in the tavern and plays music. The tavern is one of the few genuinely safe spaces in the game — the mirror world cannot be reached there, enemies do not enter, and the atmosphere is warm and comfortable.</p>
+  <p>Kytti's bestiary entry, written by past-you: <em>"Cool cat kitty cat (music cat)"</em>. No stats, no threat assessment, no notes on behaviour. Past-you simply wanted to document that Kytti exists.</p>
+  <p>The Mafia Boss's henchmen, annoyed by her music during their second visit to collect the debt, attack her. This is their mistake. Kytti destroys them immediately and without visible effort, then resumes playing. The player pickpockets the loan money back. Kytti does not acknowledge any of this.</p>
+  <p>If the player also attacks Kytti: the music shifts to a lower pitch and the player is immediately killed. No warning, no health bar, no introduction. Kytti resumes normal activity, unbothered. The henchmen already made this mistake. The player does not need to repeat it.</p>
+  <p><strong>Why this happens (mechanical, not shown to player):</strong> Kytti is a natural one-entity harmony — all instruments simultaneously, perfectly in sync. Idle play is passive. Any attack briefly interrupts this, but Kytti's retaliation immediately reharmonises as a full-power attack before anyone can capitalise. Building five on-beat hits against her is impossible. The game never explains this.</p>
+  <p>Kytti's battle music is lower pitched than the idle music, following the world's established rule: lower pitch indicates greater power. Kytti in battle mode is at full power. The system is consistent.</p>
+
+  <div class="img-slot" data-img="images/character/kytti.png" data-caption="Kytti">
+    <div class="img-slot-label">Character — Kytti</div>
+    <div class="img-slot-placeholder">images/character/kytti.png<span>Large round cream cat on her stool</span></div>
+  </div>
+
+  <div class="audio-slot">
+    <div class="audio-slot-label">Audio Example — Kytti Idle (Cheerful, High Pitch)</div>
+    <div class="bm-player" data-src="songs/examples/kytti_idle.ogg">
+      <button class="bm-circle-btn" aria-label="Play/Pause"><canvas></canvas></button>
+      <div class="bm-center"><div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div></div>
+      <canvas class="bm-freq"></canvas>
+      <div class="bm-time">0:00</div>
+    </div>
+    <div class="audio-slot-hint">Place audio file at: songs/examples/kytti_idle.ogg</div>
+  </div>
+
+  <div class="audio-slot">
+    <div class="audio-slot-label">Audio Example — Kytti Battle (Low Pitch, Full Power)</div>
+    <div class="bm-player" data-src="songs/examples/kytti_battle.ogg">
+      <button class="bm-circle-btn" aria-label="Play/Pause"><canvas></canvas></button>
+      <div class="bm-center"><div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div></div>
+      <canvas class="bm-freq"></canvas>
+      <div class="bm-time">0:00</div>
+    </div>
+    <div class="audio-slot-hint">Place audio file at: songs/examples/kytti_battle.ogg</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CRYSTAL -->
+  <div class="section-banner" id="crystal">
+    <div class="section-banner-num">System 10</div>
+    <h2>The … Crystal</h2>
+  </div>
+
+  <p>Somewhere in the Citadel, the player finds a pink crystal on the ground. When picked up, its name displays in large, heavy, imposing font: <strong>…</strong></p>
+  <p>The game never names it, never explains it, and never tells the player what it is for. The only relevant book entry reads: <em>"Do not carry what does not belong to you into places of power."</em></p>
+  <ul>
+    <li><strong>Carried into the boss fight:</strong> merges with the boss on entry, activating additional attack phases, draining resurrection energy faster, and triggering new hazards. The fight becomes significantly harder.</li>
+    <li><strong>Used on a figurine in a shop:</strong> initiates a secret pocket dimension battle for that figurine (see Figurines section).</li>
+  </ul>
+
+  <hr class="divider">
+
+  <!-- FIGURINES -->
+  <div class="section-banner" id="figurines">
+    <div class="section-banner-num">System 11</div>
+    <h2>Figurine Easter Eggs &amp; Secret Battles</h2>
+  </div>
+
+  <p>Two shops in the Citadel contain shelves of small figurines. The player can examine any figurine. There is no collection mechanic, no reward for examining them — they are references to characters from specific online content creator communities. These references are purely cosmetic and the game is fully enjoyable without recognising any of them.</p>
+  <p>If the player carries the pink crystal when touching a figurine, they are pulled into a secret pocket dimension battle:</p>
+
+  <h2 class="subsection">Unstable Shelf</h2>
+  <ul>
+    <li><strong>Eggchan</strong> (giant blue eyeball head figure) — single devastating divine attack. Always wins. No exceptions.</li>
+    <li><strong>Wemmbu</strong> (purple blob with tiara) — orbital strikes with targeting indicators, then heavy mace slams. Hard but beatable.</li>
+    <li><strong>Flamefrags</strong> (red fire figure) — fast, aggressive, reads player movement. Hard but beatable.</li>
+    <li><strong>Spoke</strong> (dark silhouette with flowing cape) — exploits game mechanics deliberately, teleports, ignores collision. Mostly wins.</li>
+    <li><strong>Parrot</strong> (figure with colourful wings) — chess. The game transitions to a chess match. The player loses.</li>
+    <li><strong>Theobald</strong> (round yellow bird with sunglasses) — TNT minecart explosions. Medium difficulty — easier if the player uses the mirror world to see where the next explosion lands before it arrives.</li>
+  </ul>
+
+  <h2 class="subsection">Stable Shelf (Wisp SMP)</h2>
+  <ul>
+    <li><strong>Slushly</strong> (yellow and purple figure) — robs the player mid-fight, uses their own stats against them but not effectively. Medium difficulty.</li>
+  </ul>
+
+  <div class="warning">
+    <strong>⚠ Development Flag — Licensing</strong>
+    The music used in Slushly's battle has a licensing restriction. This music must be disabled and replaced before the game is released publicly. This must be actioned before release. Do not ship with this music.
+  </div>
+
+  <hr class="divider">
+
+  <!-- RAT SIDE QUESTS -->
+  <div class="section-banner" id="rats">
+    <div class="section-banner-num">System 12</div>
+    <h2>Rat Side Quests</h2>
+  </div>
+
+  <p>Seven optional rat battles are hidden across different areas of the Citadel. Defeating a rat transfers its elemental ability to the final boss fight — the boss cycles through the abilities of defeated rats, each tied to a specific instrument in the boss fight's music. Players who completed rat quests will recognise each ability pattern from having already fought it.</p>
+  <ul>
+    <li>🧊 <strong>Ice Rat</strong> — frozen cave areas</li>
+    <li>🔥 <strong>Fire Rat</strong> — volcanic/hot areas</li>
+    <li>✨ <strong>Aether Rat</strong> — ethereal areas near mirror world thin spots</li>
+    <li>🏜️ <strong>Sand Rat</strong> — sandy/dusty areas</li>
+    <li>🌿 <strong>Jungle Rat</strong> — overgrown ruins</li>
+    <li>💀 <strong>Dungeon Rat</strong> — deepest dungeon area. Destroyed too thoroughly — "Pulverising a Dungeon Rat into a Fibrous Powder." Contributes nothing to the boss fight. There is a brief gap in the boss's ability cycle where its contribution would have been.</li>
+    <li>🌑 <strong>Void Rat</strong> — deepest darkest area, final one</li>
+  </ul>
+  <p>All seven rat battle themes are licensed from Azali (credited in game, used with permission).</p>
+
+  <hr class="divider">
+
+  <!-- BOSS FIGHT -->
+  <div class="section-banner" id="bossfight">
+    <div class="section-banner-num">System 13</div>
+    <h2>The Boss Fight</h2>
+  </div>
+
+  <p>The boss fight takes place in a vast arena — the thinnest point in the world, where the boundary between realities is nearly nonexistent. The cave exploration music cuts out. The breakcore track begins.</p>
+  <p>The boss is a small lizard-type creature — not to be confused with the freaky lizard thing from the mirror world, which is a different creature entirely. The arena is enormous. The game treats this with complete seriousness and never comments on the size disparity.</p>
+
+  <h2 class="subsection">Music-Driven Hazards</h2>
+  <p>Specific synthesiser sounds in the breakcore track trigger environmental hazards: ground pulling the player toward the boss, walls closing, floor tiles becoming dangerous. Players who learn to associate sounds with hazards can anticipate and avoid them. New players will be caught off guard.</p>
+
+  <h2 class="subsection">Portal System</h2>
+  <p>The arena contains mirror world portals that open and close based on the boss's energy output — not as a deliberate tactic, but as a byproduct of its nature. When open: mirror world available, certain attacks counterable from inside, harmony impossible, timer toward danger runs. When closed: real world only, harmony windows available, full necromancy active.</p>
+
+  <h2 class="subsection">Necromancy Tug-of-War</h2>
+  <p>The player raises fallen enemies as allies. Energy depletes, control flips to the boss who raises everything back. The player fights to reclaim resurrection control. The cycle repeats with escalating intensity.</p>
+
+  <h2 class="subsection">Rat Abilities</h2>
+  <p>If the player defeated rat side quests, the boss cycles through those elemental abilities. Each is tied to a dominant instrument in the breakcore track — the music signals what is coming. Players who completed rat quests recognise the patterns.</p>
+
+  <h2 class="subsection">After the Boss</h2>
+  <p>The player character opens the book. The screen fades to black. When it returns, a new bestiary entry exists — written by the current player character, not by past-you. The handwriting is slightly different. It reads: <em>"kinda powerful lil guy"</em>. Below it is a rough sketch.</p>
+
+  <div class="audio-slot">
+    <div class="audio-slot-label">Audio Example — Boss Fight Breakcore</div>
+    <div class="bm-player" data-src="songs/examples/bossfight_example.ogg">
+      <button class="bm-circle-btn" aria-label="Play/Pause"><canvas></canvas></button>
+      <div class="bm-center"><div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div></div>
+      <canvas class="bm-freq"></canvas>
+      <div class="bm-time">0:00</div>
+    </div>
+    <div class="audio-slot-hint">Place audio file at: songs/examples/bossfight_example.ogg</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ENDINGS -->
+  <div class="section-banner" id="endings">
+    <div class="section-banner-num">System 14</div>
+    <h2>The Endings</h2>
+  </div>
+
+  <p>When the boss is defeated, the player character is immediately trapped. The act of winning proves exactly why they needed to be contained. Full memory returns. The player character — and through the book entries and lore, the player — understands everything: what they did, why they sealed themselves away, why the book carries the warnings it does.</p>
+  <p>The game never directly states what the player character did. The truth is assembled from fragments. The player is trusted to reach their own conclusions.</p>
+
+  <div class="ending-grid">
+    <div class="ending-card seal">
+      <h4>Ending A — Seal Yourself</h4>
+      <p>The memory of what they did is unbearable. The player character chooses to seal themselves away again — not because they are forced to, but because they cannot live with knowing. They close their eyes. No speech. No dramatic moment. It simply ends.</p>
+      <p><strong>Music:</strong> Single lonely violin. Fades to silence.</p>
+      <div class="audio-slot">
+        <div class="audio-slot-label">Seal Ending Music</div>
+        <div class="bm-player" data-src="songs/examples/ending_seal.ogg">
+          <button class="bm-circle-btn" aria-label="Play/Pause"><canvas></canvas></button>
+          <div class="bm-center"><div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div></div>
+          <canvas class="bm-freq"></canvas>
+          <div class="bm-time">0:00</div>
+        </div>
+        <div class="audio-slot-hint">songs/examples/ending_seal.ogg</div>
+      </div>
+      <div class="img-slot" data-img="images/endings/ending_seal.png" data-caption="Ending A — Seal">
+        <div class="img-slot-label">Ending A — Seal</div>
+        <div class="img-slot-placeholder">images/endings/ending_seal.png<span>The character sealing themselves away</span></div>
+      </div>
+    </div>
+    <div class="ending-card amulet">
+      <h4>Ending B — Take the Amulet</h4>
+      <p>Past-you left an amulet in the book for this moment. Taking it permanently limits the player character's power. The memory pages burn as the amulet is accepted. The player character walks out into the world — curious, free, carrying a question they can never fully answer.</p>
+      <p><strong>Music:</strong> Warmer strings. Ends on an unresolved chord.</p>
+      <div class="audio-slot">
+        <div class="audio-slot-label">Amulet Ending Music</div>
+        <div class="bm-player" data-src="songs/examples/ending_amulet.ogg">
+          <button class="bm-circle-btn" aria-label="Play/Pause"><canvas></canvas></button>
+          <div class="bm-center"><div class="bm-progress-wave-wrap"><canvas class="bm-waveform"></canvas></div></div>
+          <canvas class="bm-freq"></canvas>
+          <div class="bm-time">0:00</div>
+        </div>
+        <div class="audio-slot-hint">songs/examples/ending_amulet.ogg</div>
+      </div>
+      <div class="img-slot" data-img="images/endings/ending_amulet.png" data-caption="Ending B — Amulet">
+        <div class="img-slot-label">Ending B — Amulet</div>
+        <div class="img-slot-placeholder">images/endings/ending_amulet.png<span>The character walking out, free</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="note-box">Neither ending is correct. One is sacrifice. One is survival.</div>
+
+  <hr class="divider">
+
+  <!-- MUSIC PLAN -->
+  <div class="section-banner" id="music">
+    <div class="section-banner-num">Appendix</div>
+    <h2>Music Plan</h2>
+  </div>
+
+  <h2 class="subsection">Tools</h2>
+  <ul>
+    <li><strong>DAW:</strong> Cakewalk Sonar (free)</li>
+    <li><strong>Orchestral samples:</strong> Spitfire LABS (free), BBC Symphony Orchestra Discover (free)</li>
+    <li><strong>Synths:</strong> Vital (free), Native Instruments free bundle</li>
+    <li><strong>Bass/Guitar:</strong> Ample Bass P Lite, Ample Guitar M Lite (both free)</li>
+    <li><strong>Additional:</strong> Frozen Plain music box, Kilohearts free tier</li>
+    <li><strong>Licensed tracks:</strong> Azali (rat battle themes, used with permission)</li>
+  </ul>
+
+  <h2 class="subsection">Track List</h2>
+  <ul>
+    <li><strong>Main Theme / Opening</strong> — strings led, slow build, unresolved</li>
+    <li><strong>Citadel Exploration</strong> — warm cave tones, dim strings, cello led</li>
+    <li><strong>Tavern</strong> — cheerful, high pitched, Kytti's influence</li>
+    <li><strong>Kytti Idle</strong> — cheerful high pitched, all instruments subtly present</li>
+    <li><strong>Kytti Battle</strong> — same as idle but lower pitch, full power</li>
+    <li><strong>Mirror World variants</strong> — all exploration tracks processed through distortion, reverb, delay, choir until familiar becomes wrong</li>
+    <li><strong>Mafia Boss HQ</strong> — tense, low brass, eye motif leitmotif</li>
+    <li><strong>7× Rat Battle themes</strong> — licensed from Azali, one per rat/element</li>
+    <li><strong>Boss Fight</strong> — original breakcore, modular loop system, three phases tied to boss HP, all synth cues timestamped</li>
+    <li><strong>Ending A (Seal)</strong> — solo violin, fades to silence</li>
+    <li><strong>Ending B (Amulet)</strong> — warmer strings, ends on unresolved chord</li>
+  </ul>
+
+  <h2 class="subsection">Boss Fight Track Technical Notes</h2>
+  <p>The boss fight track is built as a modular loop system. Individual chunks sequence semi-randomly so the track never repeats identically across a long fight. Every instrument cue is timestamped, allowing GameMaker to trigger environmental hazards in sync with the music regardless of which loop is currently playing. Three distinct phases tied to boss HP thresholds — each phase introduces new instruments and increases tempo and density.</p>
+
+  <hr class="divider">
+
+  <!-- CREDITS -->
+  <div class="section-banner" id="credits">
+    <div class="section-banner-num">Credits</div>
+    <h2>Credits (Planned)</h2>
+  </div>
+
+  <ul>
+    <li><strong>Azali</strong> — rat battle music (licensed, used with permission)</li>
+    <li><strong>Unstable Universe creators</strong> — figurine references (Eggchan, Wemmbu, Flamefrags, Spoke, Parrot, Theobald)</li>
+    <li><strong>Wisp SMP / Slushly</strong> — figurine reference ⚠ music licensing issue — resolve before release</li>
+    <li><strong>Spitfire Audio</strong> — LABS samples</li>
+    <li><strong>BBC Symphony Orchestra Discover</strong> — orchestral samples</li>
+    <li><strong>Native Instruments</strong> — free instrument bundle</li>
+    <li><strong>Vital Audio</strong> — Vital synth</li>
+    <li><strong>Ample Sound</strong> — Ample Bass P Lite, Ample Guitar M Lite</li>
+    <li><strong>YoYo Games</strong> — GameMaker engine</li>
+  </ul>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+<script>
+// Sidebar scroll sync
+(function() {
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const sections = [];
+  navLinks.forEach(link => {
+    const id = link.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) sections.push({ id, el, link });
+  });
+  function setActive(id) {
+    navLinks.forEach(l => l.classList.remove('active'));
+    const match = sections.find(s => s.id === id);
+    if (match) {
+      match.link.classList.add('active');
+      const nav = document.querySelector('nav');
+      const linkTop = match.link.offsetTop;
+      const navH = nav.offsetHeight;
+      if (linkTop < nav.scrollTop + 40 || linkTop > nav.scrollTop + navH - 40)
+        nav.scrollTo({ top: linkTop - navH / 2, behavior: 'smooth' });
+    }
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(s => observer.observe(s.el));
+})();
+
+// Lightbox
+(function() {
+  const overlay = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const caption = document.getElementById('lightbox-caption');
+  const closeBtn = document.getElementById('lightbox-close');
+  function openLightbox(src, cap) { img.src = src; caption.textContent = cap || ''; overlay.classList.add('open'); }
+  function closeLightbox() { overlay.classList.remove('open'); setTimeout(() => { img.src = ''; }, 200); }
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  function initSlots() {
+    document.querySelectorAll('.img-slot[data-img]').forEach(slot => {
+      const src = slot.dataset.img, cap = slot.dataset.caption || '';
+      const placeholder = slot.querySelector('.img-slot-placeholder');
+      const testImg = new Image();
+      testImg.onload = () => {
+        if (placeholder) {
+          const realImg = document.createElement('img');
+          realImg.src = src; realImg.alt = cap;
+          slot.replaceChild(realImg, placeholder);
+          realImg.addEventListener('click', () => openLightbox(src, cap));
+        }
+      };
+      testImg.src = src;
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initSlots);
+})();
+</script>
+
+<script>
+// Audio players — lazy init
+(function() {
+  let sharedCtx = null;
+  function getCtx() {
+    if (!sharedCtx) sharedCtx = new (window.AudioContext || window.webkitAudioContext)();
+    return sharedCtx;
+  }
+  let currentPlayer = null;
+  function formatTime(s) {
+    if (!isFinite(s)) return '0:00';
+    return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0');
+  }
+  function initPlayer(wrapper) {
+    const src = wrapper.dataset.src;
+    const circleBtn = wrapper.querySelector('.bm-circle-btn');
+    const circleCanvas = circleBtn.querySelector('canvas');
+    const waveCanvas = wrapper.querySelector('.bm-waveform');
+    const freqCanvas = wrapper.querySelector('.bm-freq');
+    const timeEl = wrapper.querySelector('.bm-time');
+    const cCtx = circleCanvas.getContext('2d');
+    const wCtx = waveCanvas.getContext('2d');
+    const fCtx = freqCanvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    let audio=null,analyser=null,freqData=null,timeData=null,sourceNode=null;
+    let isPlaying=false,rafId=null,audioReady=false,loadFailed=false;
+    function setupAudio() {
+      if (audio) return;
+      audio = new Audio(); audio.crossOrigin='anonymous'; audio.src=src; audio.preload='metadata';
+      audio.addEventListener('error', () => { loadFailed=true; drawIdle(true); });
+      audio.addEventListener('loadedmetadata', () => { audioReady=true; timeEl.textContent=formatTime(audio.duration); });
+      audio.addEventListener('timeupdate', () => { if(audio.duration) timeEl.textContent=formatTime(audio.currentTime); });
+      audio.addEventListener('ended', () => { isPlaying=false; timeEl.textContent=formatTime(audio.duration); cancelAnimationFrame(rafId); drawIdle(false); });
+    }
+    function connectAnalyser() {
+      if (analyser) return;
+      const ctx = getCtx();
+      sourceNode = ctx.createMediaElementSource(audio);
+      analyser = ctx.createAnalyser();
+      analyser.fftSize=512; analyser.smoothingTimeConstant=0.75; analyser.minDecibels=-100; analyser.maxDecibels=-10;
+      sourceNode.connect(analyser); analyser.connect(ctx.destination);
+      freqData = new Uint8Array(analyser.frequencyBinCount);
+      timeData = new Uint8Array(analyser.fftSize);
+    }
+    function drawIdle(failed) {
+      const size = circleCanvas.width/dpr;
+      cCtx.clearRect(0,0,circleCanvas.width,circleCanvas.height);
+      const cx=size/2,cy=size/2,r=size/2-3;
+      cCtx.beginPath(); cCtx.arc(cx,cy,r,0,Math.PI*2); cCtx.strokeStyle=failed?'#c44a4a':'#7b5ea8'; cCtx.lineWidth=3; cCtx.stroke();
+      cCtx.beginPath(); cCtx.arc(cx,cy,r-4,0,Math.PI*2); cCtx.fillStyle=failed?'rgba(196,74,74,0.1)':'rgba(123,94,168,0.12)'; cCtx.fill();
+      if (failed) {
+        cCtx.strokeStyle='#c44a4a'; cCtx.lineWidth=2.5; const o=size*0.28;
+        cCtx.beginPath(); cCtx.moveTo(cx-o,cy-o); cCtx.lineTo(cx+o,cy+o); cCtx.moveTo(cx+o,cy-o); cCtx.lineTo(cx-o,cy+o); cCtx.stroke();
+      } else {
+        cCtx.fillStyle='#a07ad4'; const ts=size*0.22;
+        cCtx.beginPath(); cCtx.moveTo(cx-ts*0.6+size*0.03,cy-ts); cCtx.lineTo(cx-ts*0.6+size*0.03,cy+ts); cCtx.lineTo(cx+ts*1.0+size*0.03,cy); cCtx.closePath(); cCtx.fill();
+      }
+      const ww=waveCanvas.width/dpr,wh=waveCanvas.height/dpr,midY=wh/2;
+      wCtx.clearRect(0,0,waveCanvas.width,waveCanvas.height);
+      wCtx.beginPath(); wCtx.moveTo(0,midY); wCtx.lineTo(ww,midY); wCtx.strokeStyle='rgba(180,180,200,0.5)'; wCtx.lineWidth=3; wCtx.stroke();
+      wCtx.beginPath(); wCtx.arc(5,midY,5,0,Math.PI*2); wCtx.fillStyle='rgba(200,160,248,0.5)'; wCtx.fill();
+      const fw=freqCanvas.width/dpr,fh=freqCanvas.height/dpr;
+      fCtx.clearRect(0,0,freqCanvas.width,freqCanvas.height);
+      const barCount=12,barW=Math.floor(fw/barCount)-1;
+      for(let i=0;i<barCount;i++){fCtx.fillStyle='rgba(74,143,212,0.15)';fCtx.fillRect(i*(barW+1),fh-fh*0.08,barW,fh*0.08);}
+    }
+    function drawFrame() {
+      if (!analyser) return;
+      analyser.getByteFrequencyData(freqData); analyser.getByteTimeDomainData(timeData);
+      const size=circleCanvas.width/dpr,cx=size/2,cy=size/2;
+      cCtx.clearRect(0,0,circleCanvas.width,circleCanvas.height);
+      const barCount=32,innerR=size*0.28,outerMax=size*0.44,step=Math.floor(freqData.length/barCount);
+      for(let i=0;i<barCount;i++){
+        const val=Math.min(1,(freqData[i*step]/255)*2.0),angle=(i/barCount)*Math.PI*2-Math.PI/2;
+        const barLen=innerR+val*(outerMax-innerR);
+        cCtx.strokeStyle=`hsla(${260+val*60},70%,${50+val*30}%,${0.6+val*0.4})`; cCtx.lineWidth=2.5;
+        cCtx.beginPath(); cCtx.moveTo(cx+Math.cos(angle)*innerR,cy+Math.sin(angle)*innerR); cCtx.lineTo(cx+Math.cos(angle)*barLen,cy+Math.sin(angle)*barLen); cCtx.stroke();
+      }
+      cCtx.beginPath(); cCtx.arc(cx,cy,innerR-2,0,Math.PI*2); cCtx.fillStyle='rgba(10,11,15,0.85)'; cCtx.fill();
+      cCtx.fillStyle='rgba(200,160,248,0.7)'; const bw=size*0.09,bh=size*0.28;
+      cCtx.fillRect(cx-size*0.14-bw/2,cy-bh/2,bw,bh); cCtx.fillRect(cx+size*0.05,cy-bh/2,bw,bh);
+      const ww=waveCanvas.width/dpr,wh=waveCanvas.height/dpr;
+      wCtx.clearRect(0,0,waveCanvas.width,waveCanvas.height);
+      const pct=audio.duration?audio.currentTime/audio.duration:0,progressX=pct*ww,midY=wh/2;
+      wCtx.beginPath(); wCtx.moveTo(0,midY); wCtx.lineTo(ww,midY); wCtx.strokeStyle='rgba(180,180,200,0.3)'; wCtx.lineWidth=3; wCtx.stroke();
+      if(progressX>0){wCtx.beginPath();wCtx.moveTo(0,midY);wCtx.lineTo(progressX,midY);wCtx.strokeStyle='#4a8fd4';wCtx.lineWidth=3;wCtx.stroke();}
+      const dotX=Math.max(6,progressX);
+      wCtx.beginPath();wCtx.arc(dotX,midY,6,0,Math.PI*2);wCtx.fillStyle='rgba(123,94,168,0.3)';wCtx.fill();
+      wCtx.beginPath();wCtx.arc(dotX,midY,5,0,Math.PI*2);wCtx.fillStyle='#c8a0f8';wCtx.fill();
+      const waveStep=Math.max(1,Math.floor(timeData.length/128)),pts=[];
+      for(let i=0;i<timeData.length;i+=waveStep)pts.push({x:(i/timeData.length)*ww,y:midY+((timeData[i]/128.0)-1.0)*(wh*0.44)});
+      wCtx.beginPath();wCtx.moveTo(pts[0].x,pts[0].y);
+      for(let i=1;i<pts.length-1;i++){const mx=(pts[i].x+pts[i+1].x)/2,my=(pts[i].y+pts[i+1].y)/2;wCtx.quadraticCurveTo(pts[i].x,pts[i].y,mx,my);}
+      wCtx.lineTo(pts[pts.length-1].x,pts[pts.length-1].y);
+      const wGrad=wCtx.createLinearGradient(0,0,ww,0);
+      wGrad.addColorStop(0,'rgba(180,120,255,0.85)');wGrad.addColorStop(Math.min(pct,0.999),'rgba(200,140,255,0.95)');
+      wGrad.addColorStop(Math.min(pct+0.001,1),'rgba(100,80,160,0.35)');wGrad.addColorStop(1,'rgba(80,60,140,0.25)');
+      wCtx.strokeStyle=wGrad;wCtx.lineWidth=2.5;wCtx.lineJoin='round';wCtx.lineCap='round';wCtx.stroke();
+      const fw=freqCanvas.width/dpr,fh=freqCanvas.height/dpr;
+      fCtx.clearRect(0,0,freqCanvas.width,freqCanvas.height);
+      const numBars=12,bw2=Math.floor(fw/numBars)-1,barStep=Math.floor(freqData.length/numBars);
+      for(let i=0;i<numBars;i++){
+        let sum=0;for(let j=0;j<3;j++)sum+=freqData[i*barStep+j]||0;
+        const val2=Math.min(1,(sum/(3*255))*2.2),bh2=Math.max(4,val2*fh*0.96),x2=i*(bw2+1),hue2=200+(i/numBars)*80;
+        fCtx.fillStyle=`hsla(${hue2},70%,${35+val2*40}%,${0.55+val2*0.45})`;fCtx.fillRect(x2,fh-bh2,bw2,bh2);
+        fCtx.fillStyle=`hsla(${hue2},90%,78%,${0.7+val2*0.3})`;fCtx.fillRect(x2,fh-bh2-2,bw2,2);
+      }
+      rafId=requestAnimationFrame(drawFrame);
+    }
+    function resizeCanvases() {
+      const cw=circleBtn.offsetWidth,ch=circleBtn.offsetHeight;
+      if(cw>0){circleCanvas.width=cw*dpr;circleCanvas.height=ch*dpr;cCtx.setTransform(dpr,0,0,dpr,0,0);}
+      const ww=waveCanvas.parentElement.offsetWidth,wh=waveCanvas.parentElement.offsetHeight;
+      if(ww>0){waveCanvas.width=ww*dpr;waveCanvas.height=(wh>0?wh:44)*dpr;wCtx.setTransform(dpr,0,0,dpr,0,0);}
+      const fw=freqCanvas.offsetWidth,fh=freqCanvas.offsetHeight;
+      if(fw>0){freqCanvas.width=fw*dpr;freqCanvas.height=fh*dpr;fCtx.setTransform(dpr,0,0,dpr,0,0);}
+      if(!isPlaying) drawIdle(loadFailed);
+    }
+    const ro=new ResizeObserver(()=>resizeCanvases());
+    ro.observe(circleBtn); ro.observe(waveCanvas.parentElement);
+    window.addEventListener('resize',resizeCanvases);
+    function scrubTo(clientX){if(!audio||!audio.duration)return;const rect=waveCanvas.parentElement.getBoundingClientRect();audio.currentTime=Math.max(0,Math.min(1,(clientX-rect.left)/rect.width))*audio.duration;}
+    let scrubbing=false;
+    waveCanvas.parentElement.addEventListener('mousedown',e=>{scrubbing=true;scrubTo(e.clientX);});
+    window.addEventListener('mousemove',e=>{if(scrubbing)scrubTo(e.clientX);});
+    window.addEventListener('mouseup',()=>{scrubbing=false;});
+    waveCanvas.parentElement.addEventListener('touchstart',e=>{e.preventDefault();scrubTo(e.touches[0].clientX);},{passive:false});
+    waveCanvas.parentElement.addEventListener('touchmove',e=>{e.preventDefault();scrubTo(e.touches[0].clientX);},{passive:false});
+    circleBtn.addEventListener('click', async()=>{
+      if(loadFailed)return;
+      setupAudio();
+      const ctx=getCtx();
+      if(ctx.state==='suspended')await ctx.resume();
+      if(isPlaying){audio.pause();isPlaying=false;cancelAnimationFrame(rafId);drawIdle(false);return;}
+      if(currentPlayer&&currentPlayer!==wrapper)currentPlayer.dispatchEvent(new CustomEvent('bm-stop'));
+      currentPlayer=wrapper;
+      connectAnalyser();
+      try{await audio.play();isPlaying=true;rafId=requestAnimationFrame(drawFrame);}
+      catch(e){loadFailed=true;drawIdle(true);}
+    });
+    wrapper.addEventListener('bm-stop',()=>{if(audio&&isPlaying){audio.pause();isPlaying=false;cancelAnimationFrame(rafId);drawIdle(false);}});
+    drawIdle(false);
+  }
+  document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.bm-player').forEach(initPlayer);});
+})();
+</script>
+
+</body>
+</html>
