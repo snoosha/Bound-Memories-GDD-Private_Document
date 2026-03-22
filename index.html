@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0a0b0f;color:#d4d8e8;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Bound Memories — Game Design Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SIDEBAR NAV -->
+<nav>
+  <div class="nav-title">Bound Memories GDD</div>
+  <a href="#top">Overview</a>
+  <a href="#section1" class="section-link">Section 1 — Concept</a>
+  <a href="#title" class="sub-link">Working Title</a>
+  <a href="#concept" class="sub-link">Concept Statement</a>
+  <a href="#genre" class="sub-link">Genre</a>
+  <a href="#audience" class="sub-link">Target Audience</a>
+  <a href="#usp" class="sub-link">Unique Selling Points</a>
+  <a href="#section2" class="section-link">Section 2 — Product</a>
+  <a href="#pov" class="sub-link">Player Experience & POV</a>
+  <a href="#style" class="sub-link">Visual & Audio Style</a>
+  <a href="#fiction" class="sub-link">Game World Fiction</a>
+  <a href="#monetization" class="sub-link">Monetization</a>
+  <a href="#scope" class="sub-link">Platform & Scope</a>
+  <a href="#section3" class="section-link">Section 3 — Systems</a>
+  <a href="#loops" class="sub-link">Core Loops</a>
+  <a href="#objectives" class="sub-link">Objectives & Progression</a>
+  <a href="#book" class="sub-link">System 1: The Book</a>
+  <a href="#rhythm" class="sub-link">System 2: Rhythm Combat</a>
+  <a href="#harmony" class="sub-link">System 3: Harmony</a>
+  <a href="#mirrorworld" class="sub-link">System 4: Mirror World</a>
+  <a href="#stealth" class="sub-link">System 5: Stealth</a>
+  <a href="#puzzles" class="sub-link">System 6: Puzzles</a>
+  <a href="#interactivity" class="sub-link">Interactivity</a>
+  <a href="#ux" class="sub-link">UX Design</a>
+</nav>
+
+<!-- MAIN -->
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Game Design Document</div>
+    <h1>BOUND MEMORIES</h1>
+    <div class="hero-subtitle">Puzzle-Combat Adventure · Dark Fantasy Narrative</div>
+    <div class="hero-quote">"It's all yours." — ParrotX2</div>
+    <div class="quick-ref">
+      <div class="quick-ref-item"><div class="quick-ref-label">Engine</div><div class="quick-ref-value">GameMaker</div></div>
+      <div class="quick-ref-item"><div class="quick-ref-label">Platform</div><div class="quick-ref-value">PC (Windows)</div></div>
+      <div class="quick-ref-item"><div class="quick-ref-label">Team</div><div class="quick-ref-value">4 people</div></div>
+      <div class="quick-ref-item"><div class="quick-ref-label">Rating</div><div class="quick-ref-value">T (Teen)</div></div>
+      <div class="quick-ref-item"><div class="quick-ref-label">Target Age</div><div class="quick-ref-value">13+</div></div>
+      <div class="quick-ref-item"><div class="quick-ref-label">Playtime</div><div class="quick-ref-value">5+ hours</div></div>
+      <div class="quick-ref-item"><div class="quick-ref-label">Monetization</div><div class="quick-ref-value">Free to Play (cosmetics only)</div></div>
+      <div class="quick-ref-item"><div class="quick-ref-label">Target Release</div><div class="quick-ref-value">2027</div></div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- SECTION 1 -->
+    <div class="section-banner" id="section1">
+      <div class="section-banner-num">Section 01</div>
+      <h2>High Level Concept Design</h2>
+    </div>
+
+    <h2 class="subsection" id="title">1.1 Working Title</h2>
+    <p>The game's title is <strong>Bound Memories</strong>. The title has 2 meanings; "Bound" refers to the player's situation - they are physically bound/stuck in a prison that they have sealed themselves into - and tied to a past that they cannot escape. "Memories" is the entire goal of the game: chasing them, uncovering them, and deciding whether they are worth keeping. The title says what the game is about in two words.</p>
+
+    <h2 class="subsection" id="concept">1.2 Concept Statement</h2>
+    <div class="book-quote">"You wake inside an underground prison, sealed there by your past self, with no memory as to why. Following the only path available to you, you uncover what you did - and face a choice: are your memories <em>really</em> worth keeping?"</div>
+
+    <h2 class="subsection" id="genre">1.3 Genre</h2>
+    <p>Bound Memories combines 2 genres, each adding to the last without them conflicting:</p>
+    <h3 class="subsub">Puzzle-Adventure</h3>
+    <p>The game is exploration driven. The player moves through a large underground citadel called Destruction's Gaze, discovering areas, unlocking items, and solving environmental puzzles. The puzzles are driven by the mirror world - a parallel dimension accessible through... mirrors (and other reflective surfaces) - where physics and nature behave differently from the real world.</p>
+    <h3 class="subsub">Rhythm Combat</h3>
+    <p>Combat is built around listening to the music. Attacking on beat with an instrument builds towards activating its elemental effect. The player must listen actively and react to what is currently playing.</p>
+
+    <h2 class="subsection" id="audience">1.4 Target Audience</h2>
+    <h3 class="subsub">Primary Audience</h3>
+    <ul>
+      <li>Ages 12+</li>
+      <li>Players who like indie games (such as) - Undertale, Hollow Knight, Celeste</li>
+      <li>Players who enjoy music as a gameplay element, like in rhythm games</li>
+    </ul>
+    <p>Rated T for Teen - difficult mechanics, fantasy violence, scary content (imprisonment, guilt, amnesia) and mild horror (floating eyes and a pursuing creature in the mirror realm)</p>
+
+    <h2 class="subsection" id="usp">1.5 Unique Selling Points</h2>
+    <h3 class="subsub">Music Based Combat</h3>
+    <p>Most other games use music as atmosphere. In Bound Memories, the music is an actual functional part of the combat. Each instrument has an associated element. (see <a href="#rhythm">3.2, System 2</a>) Five consecutive, on beat attacks timed to a specific instrument (to make sure which instrument you are attacking with) activates that instrument's effect. Harmony windows open when multiple instruments' attacks sync up, combining each instrument's element and making each attack more powerful.</p>
+    <h3 class="subsub">A Parallel World With Its Own Physics</h3>
+    <p>The mirror world (accessible through reflective surfaces) is similar to the real world, but distorted and blue/purple. Many things are different there such as:</p>
+    <ul>
+      <li>The gravity</li>
+      <li>The structures</li>
+      <li>The mechanics</li>
+    </ul>
+    <p>The longer a player stays there, the worse it gets.</p>
+    <table class="timeline-table">
+      <tr><th>Minutes</th><th>What happens</th></tr>
+      <tr><td>1</td><td>Whispers start, your shadow glitches, and the music distorts slightly.</td></tr>
+      <tr><td>2</td><td>Eyes start to surround you, and the distortions grow. An unsettling, distant growling begins…</td></tr>
+      <tr><td>2.75 (2 mins 45 secs)</td><td>The eyes start shooting beams of purple matter at you. It doesn't do much damage, but there are lots of them, and it makes noise…</td></tr>
+      <tr><td>3 mins</td><td>A hostile creature charges at the player, and it can follow the player back into the real world. It is really dangerous..</td></tr>
+    </table>
+    <h3 class="subsub">Diegetic UI</h3>
+    <p>There are barely any traditional menus or interfaces. It is all within the world. Most UI elements live inside of a book which the player carries, written by their past self (when they had their memories). It has instructions, logs/ diary entries, controls/keybinds, the exit button, etc</p>
+    <h3 class="subsub">Vocal Power Indicators</h3>
+    <p>Every character's "voice" is short musical tones (I like to call them beepy boops) which play alongside text (kinda like Undertale, which now that I think about it heavily inspired the game, subconsciously). However, lower pitch indicates more power, and everything follows this rule. The player has the lowest tone/pitch of anything, which adds to the mystery (if the player figures it out).</p>
+
+    <!-- SECTION 2 -->
+    <div class="section-banner" id="section2">
+      <div class="section-banner-num">Section 02</div>
+      <h2>Product Design</h2>
+    </div>
+
+    <h2 class="subsection" id="pov">2.1 Player Experience and Game POV</h2>
+    <h3 class="subsub">Who <em>Is</em> The Player?</h3>
+    <p>The player controls an amnesiac sorcerer - a magic user who can access parallel dimensions. They wake with no memories or any recollection of their past self. A book sits on the other side of the cave, no name or anything. Everything the player learns comes from that book. It seems to be enchanted, as it can move slightly on its own, so that it can direct the player towards the right direction.</p>
+    <p>The character is always cloaked, and their face is never visible. Before losing their memories, the character left one rule in the book: <em>"NEVER show your face under ANY circumstances."</em></p>
+
+    <div class="img-grid">
+      <div class="img-slot" data-img="images/character/player_concept.png" data-caption="Player Character — Concept Art">
+        <div class="img-slot-label">Character — Player <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+        <div class="img-slot-placeholder">images/character/player_concept.png<span>Concept art of the cloaked sorcerer</span></div>
+      </div>
+      <div class="img-slot" data-img="images/character/cloak_lowhealth.png" data-caption="Player Cloak — Low Health State">
+        <div class="img-slot-label">Health — Cloak (Low Health) <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+        <div class="img-slot-placeholder">images/character/cloak_lowhealth.png<span>Cloak becoming tattered and faded at low health</span></div>
+      </div>
+    </div>
+
+    <h3 class="subsub">What Is The Setting?</h3>
+    <p>The game takes place entirely underground. The primary location is the citadel - a vast, gothic fortress which rises high above the streets of the city which is called the citadel's foot. It is all run by the boss of a mafia called the mafia boss (wow I don't have an imagination), whose eye symbol is carved everywhere.</p>
+    <p>The citadel is run by "evolved" humans (people who have wings on their heads), goblins, and the undead. They run shops, trade, and can maybe be friends with you.</p>
+    <h3 class="subsub">What Fantasy Does The Game Grant?</h3>
+    <p>You can be the most powerful entity in the room, but you don't know who you are or what you are doing there. The player can access a parallel dimension, and unleash elemental attacks, yet they don't even know their own name. The game is about the choice between power and identity, or peace and oblivion.</p>
+    <h3 class="subsub">Target Emotions</h3>
+    <ul>
+      <li><strong>Growing dread</strong> — the mirror world grows more hostile and distorted over time; the eyes in the reflection get closer and clearer throughout the game</li>
+      <li><strong>Curiosity</strong> — the mystery of what the character did, the strange world around them, lore that never gets fully explained</li>
+      <li><strong>Melancholy</strong> — at the end, neither ending feels right, and you always lose out, even if it was the "better" option</li>
+      <li><strong>Occasional comedy</strong> — some characters are just designed to be pea-brained and stupid, to make the player laugh, usually before a dangerous moment so their spirits are lifted</li>
+    </ul>
+
+    <h2 class="subsection" id="style">2.2 Visual and Audio Style</h2>
+    <h3 class="subsub">Visual Style</h3>
+    <p>The game is 2D pixel art, but from an isometric perspective if possible. Depth sorting could be handled by assigning depth values based on vertical position.</p>
+    <p>The real world uses warmer, dim cave tones (such as browns, dark greens, oranges). The mirror world is similar to the real world, but the main difference is the cool tones (like cold blue, purples, pinks).</p>
+
+    <div class="img-grid">
+      <div class="img-slot" data-img="images/world/citadel_overview.png" data-caption="The Citadel — Overview">
+        <div class="img-slot-label">World — The Citadel <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+        <div class="img-slot-placeholder">images/world/citadel_overview.png<span>Gothic fortress built into the cave ceiling</span></div>
+      </div>
+      <div class="img-slot" data-img="images/world/underground_environment.png" data-caption="Underground Environment">
+        <div class="img-slot-label">World — Environment <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+        <div class="img-slot-placeholder">images/world/underground_environment.png<span>Cave lighting, warm tones, stalactites</span></div>
+      </div>
+    </div>
+
+    <h3 class="subsub">Audio Style</h3>
+    <p>Strings are the most used, like violin, and cello. Piano will also be a main instrument used. Other instruments can be introduced depending on the mood, like breakcore drums for cool bossfights, or electric guitar too. The music in the game, but mostly the bossfights, will have modular sections for the song. There may be an A section, a (slightly different to A) B section, a more intense C section, and like a calmer/dying out D section, for variety and repeatability.</p>
+    <h3 class="subsub">Vocal Textures</h3>
+    <p>Every character communicates through short notes playing alongside textboxes, similar to Undertale. However, there is one twist; The lower the note, the more powerful the entity is. The player has the lowest vocal tone in the entire game.</p>
+
+    <h2 class="subsection" id="fiction">2.3 Game World Fiction</h2>
+    <p>The world is 100% underground. The citadel is most of the game. it is a vast gothic fortress which stretches to the ceiling, with multiple towers disappearing behind stalactites. The Mafia Boss' eye symbol is engraved everywhere.</p>
+    <p>Behind every mirrored surface is the mirror world, and the player can access it whenever they see a mirror, unless it is (fully) indoors. ONLY the player is able to access the mirror world. no other people can.</p>
+    <p>The player wakes up with no memory. The opening cutscene shows them walking towards a cave, with a heavy bank style door wide open. They pause for a second, look around one last time, and walk in, closing the door behind them. The whole game is spent finding out why.</p>
+
+    <h2 class="subsection" id="monetization">2.4 Monetization</h2>
+    <p>The game can be free to play for a short demo, like the introduction, but it cuts off just before the citadel. it costs £1.75 and you can also buy cosmetics to further support me/the dev team.</p>
+
+    <h2 class="subsection" id="scope">2.5 Platform, Technology, and Scope</h2>
+    <ul>
+      <li><strong>Platforms:</strong> PC (Windows, Linux, Mac), Mobile (PC is released first, and then mobile is released later as all of the inputs are different)</li>
+      <li><strong>Engine:</strong> GameMaker</li>
+      <li><strong>Team Size:</strong> 1-4 people (depending on if the other people in the group like the game enough to continue)</li>
+    </ul>
+    <h3 class="subsub">Major Risks</h3>
+    <ul>
+      <li>The modular music may be difficult to execute.</li>
+      <li>The whole game will need lots of optimisation</li>
+      <li>The rhythm beat detection may be pretty difficult to nail</li>
+    </ul>
+
+    <!-- SECTION 3 -->
+    <div class="section-banner" id="section3">
+      <div class="section-banner-num">Section 03</div>
+      <h2>Detailed & Game Systems Design</h2>
+    </div>
+
+    <h2 class="subsection" id="loops">3.1 Core Loops</h2>
+    <h3 class="subsub">Combat Loop</h3>
+    <p>Encounter enemy → listen to music → identify the instrument you want → hit 5 on beat attacks to that instrument → elemental effect activates → watch for harmony windows → move on.</p>
+    <h3 class="subsub">Exploration Loop</h3>
+    <p>Move through Citadel → find puzzles → enter mirror world → solve gravity-distortion puzzle or find lore → unlock new area → accumulate book entries → deepen understanding of central mystery.</p>
+    <h2 class="subsection" id="objectives">3.2 Objectives and Progression</h2>
+    <h3 class="subsub">Opening and Tutorial</h3>
+    <p>The player wakes with no memory. A book they find contains a tutorial written by their past self, which they have the choice to skip (if they are speedrunning the game)</p>
+    <h3 class="subsub">Short Term Goals (~First Hour)</h3>
+    <ul>
+      <li>Learn basic movement and combat</li>
+      <li>Discover and enter the mirror world for the first time</li>
+      <li>Emerge from a tunnel into the full reveal of the Citadel - one of the game's most beautiful moments</li>
+    </ul>
+    <h3 class="subsub">Medium-Term Goals (~Hours 1–3)</h3>
+    <ul>
+      <li>Explore the Citadel's multiple wings and areas</li>
+      <li>Try to clear your debt to the Mafia</li>
+      <li>Find and complete optional rat side quests</li>
+      <li>Discover, and decide, what to do with the mysterious pink crystal</li>
+      <li>Accumulate lore entries revealing the player's past</li>
+    </ul>
+    <h3 class="subsub">Long-Term Goals (~Hours 3–5+)</h3>
+    <ul>
+      <li>Reach the boss arena</li>
+      <li>Defeat the boss</li>
+      <li>Make the ending choice</li>
+    </ul>
+
+    <h2 class="subsection" id="book">System 1: The Book/Diary</h2>
+    <p>There are very few, if any, normal menus. Most of what the player needs will be inside the book.</p>
+    <ul>
+      <li><strong>Save slots</strong> — Journal logs which say the date, time, and location.</li>
+      <li><strong>Stats page</strong> — Four stats recorded as numbers, basically a skill tree.</li>
+      <li><strong>Bestiary</strong> — Entries which describe the various creatures which you may see. The quality of the creature's sketch shows how dangerous/common it is. The calmer and more detailed a sketch, the more easily the player could see it. Some creatures may not have entries, as the past player hadn't encountered it.</li>
+      <li><strong>Diary entries</strong> — The past player had enchanted the book so certain pages can only be opened when you get to certain places in the game. For example, when you get to the citadel, it gives you a tip "Don't interact with anyone related to the eye"</li>
+      <li><strong>Mirror world pages</strong> — Some pages are only visible in the mirror world, and are blank in the real world.</li>
+      <li><strong>Tutorial</strong> — It can be skipped, but the book can use sketches and animated sketches to teach you the mechanics, and then enemies can conveniently appear for you to practice on.</li>
+    </ul>
+    <p>Examples of the book helping the player:</p>
+    <div class="book-quote">"Try... Just try to make the right choice"</div>
+    <div class="book-quote">"Don't carry what doesn't belong to you into places of power."</div>
+    <div class="book-quote">"NEVER show your face under ANY circumstances."</div>
+
+    <div class="img-slot" data-img="images/book/contents_page.png" data-caption="The Book — Contents Page">
+      <div class="img-slot-label">The Book — Contents Page <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+      <div class="img-slot-placeholder">images/book/contents_page.png<span>Hand-drawn contents page written by past-you</span></div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-item"><div class="stat-name">Power</div><div class="stat-desc">Damage dealt</div></div>
+      <div class="stat-item"><div class="stat-name">Health</div><div class="stat-desc">Hit point pool size</div></div>
+      <div class="stat-item"><div class="stat-name">Stealth</div><div class="stat-desc">Enemy awareness; cloak effectiveness</div></div>
+      <div class="stat-item"><div class="stat-name">Intelligence</div><div class="stat-desc">Trick options in combat & dialogue</div></div>
+      <div class="stat-item"><div class="stat-name">Charm</div><div class="stat-desc">Hostile entities may be less likely to fight you</div></div>
+    </div>
+
+    <h2 class="subsection" id="rhythm">System 2: (Rhythm) Combat</h2>
+    <p>Combat is based on the background music. Each instrument has a different effect, which are listed below. Each effect can deal more or less damage to specific types of enemies.</p>
+    <!-- Audio players removed temporarily - add songs/examples/[instrument]_example.ogg when ready -->
+
+    <h3 class="subsub">The Sword as Diegetic UI</h3>
+    <p>Because the sword is made from musicians' souls, it responds directly to music — eliminating the need for any combat HUD. Everything the player needs to know is communicated through the blade:</p>
+    <ul>
+      <li><strong>Beat window glow:</strong> The blade brightens as the beat approaches and dims between hits — the glow intensity is the beat indicator.</li>
+      <li><strong>Instrument colour:</strong> The blade's colour shifts to match whichever instrument is currently dominant in the music. Purple for bass, blue for electric guitar, pale blue-white for violin high register, deep blue for violin low register, brown-gold for cello, white for drums. The player learns to read the colour without thinking about it.</li>
+      <li><strong>Hit feedback:</strong> A correct on-beat hit produces a brilliant flare along the full length of the blade. A miss makes it flicker and briefly darken — a visual wince.</li>
+      <li><strong>Soul wisps:</strong> Small particles of light orbit the blade at all times. Their orbit speed increases as the beat approaches and slows just after — a secondary beat indicator for players who find colour harder to read. On a successful hit they briefly scatter outward then return. The number of wisps currently orbiting shows the current hit combo — they accumulate with each consecutive hit and scatter on a miss.</li>
+      <li><strong>Harmony:</strong> When a harmony window opens, all the wisps briefly align into a single orbit pattern and the blade cycles through all active instrument colours rapidly.</li>
+      <li><strong>Health:</strong> Shown through the player character's cloak — more tattered and faded as damage is taken.</li>
+    </ul>
+
+    <div class="img-slot" data-img="images/combat/sword_ambient.png" data-caption="The Soul-Forged Sword — Ambient State">
+      <div class="img-slot-label">Combat — The Sword <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+      <div class="img-slot-placeholder">images/combat/sword_ambient.png<span>Soul-forged blade, ambient glow state</span></div>
+    </div>
+
+    <h3 class="subsub">Hit Precision Tiers</h3>
+    <p>The hit window is approximately 4 ticks (200ms) by default. Hitting within this window always registers, but how close to the exact beat determines a damage bonus:</p>
+    <ul>
+      <li><strong>Within 300ms:</strong> Fine — base damage</li>
+      <li><strong>Within 200ms:</strong> Good — 5% bonus</li>
+      <li><strong>Within 100ms:</strong> Great — 10% bonus</li>
+      <li><strong>Within 50ms:</strong> Excellent — 15% bonus</li>
+    </ul>
+    <p>The sword's flare on a hit reflects the precision tier. No numbers appear on screen. The player reads the sword.</p>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🥁</div>
+        <div>
+          <div class="instrument-name">Drums</div>
+          <div class="instrument-element">Element: Explosive</div>
+        </div>
+      </div>
+      <div class="instrument-desc">Every 10th successful hit on the same beat as the drums produces an explosion. If you miss the hit, you get exploded. if you succeed, the enemy/enemies explode.</div>
+      <!-- Audio: songs/examples/drums_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🎻</div>
+        <div>
+          <div class="instrument-name">Violin (fast and high)</div>
+          <div class="instrument-element">Element: Wind / Air</div>
+        </div>
+      </div>
+      <div class="instrument-desc">The wind element can push away objects and projectiles. Projectiles also do decreased damage. This can be used in puzzles as well to push boulders and doors.</div>
+      <!-- Audio: songs/examples/violin_high_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🎻</div>
+        <div>
+          <div class="instrument-name">Violin — (slow and low)</div>
+          <div class="instrument-element">Element: Ice / Freeze</div>
+        </div>
+      </div>
+      <div class="instrument-desc">The ice can freeze enemies and objects in place, and can create paths on water to help traverse the lands.</div>
+      <!-- Audio: songs/examples/violin_low_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🎸</div>
+        <div>
+          <div class="instrument-name">Cello</div>
+          <div class="instrument-element">Element: Earth</div>
+        </div>
+      </div>
+      <div class="instrument-desc">This element can push large boulders, make spikes come from the ground, and anchor enemies in place to limit them strafing and moving annoyingly. Useful for small agile enemies which jump around a lot.</div>
+      <!-- Audio: songs/examples/cello_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">⚡</div>
+        <div>
+          <div class="instrument-name">Electric Guitar</div>
+          <div class="instrument-element">Element: Lightning / Electricity</div>
+        </div>
+      </div>
+      <div class="instrument-desc">Lightning is channelled through enemies and can hit multiple at once, but the more enemies it travels through, the less damage it does. An enemy may be hit by multiple lightning strands at once, for more damage.</div>
+      <!-- Audio: songs/examples/guitar_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🌑</div>
+        <div>
+          <div class="instrument-name">Bass</div>
+          <div class="instrument-element">Element: Curse / Damage Over Time</div>
+        </div>
+      </div>
+      <div class="instrument-desc">Any enemy hit by this will take damage over time. It works best when combined with other elements.</div>
+      <!-- Audio: songs/examples/bass_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🪗</div>
+        <div>
+          <div class="instrument-name">Harmonica</div>
+          <div class="instrument-element">Element: Confusion</div>
+        </div>
+      </div>
+      <div class="instrument-desc">This element causes any enemies hit to become confused, and attack the nearest entity. This is very useful in crowds and places with multiple enemies.</div>
+      <!-- Audio: songs/examples/harmonica_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🎷</div>
+        <div>
+          <div class="instrument-name">Organ</div>
+          <div class="instrument-element">Element: Ghost</div>
+        </div>
+      </div>
+      <div class="instrument-desc">Does 1.5x more damage to ghost type enemies, but less damage to normal enemies. Attacks with this element can pass through solid objects.</div>
+      <!-- Audio: songs/examples/organ_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🔔</div>
+        <div>
+          <div class="instrument-name">Bells</div>
+          <div class="instrument-element">Element: Holy / Light</div>
+        </div>
+      </div>
+      <div class="instrument-desc">Bright and piercing. Strong against dark enemies, weak against everything else. Pairs naturally with the organ — both are traditionally church instruments.</div>
+      <!-- Audio: songs/examples/bells_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🎵</div>
+        <div>
+          <div class="instrument-name">Music Box / Bells chime</div>
+          <div class="instrument-element">Element: Soothe</div>
+        </div>
+      </div>
+      <div class="instrument-desc">Small and supportive. Calms enemies slightly — reducing their movement speed and attack frequency. Does nothing loud or dramatic. Makes other things easier.</div>
+      <!-- Audio: songs/examples/musicbox_example.ogg -->
+    </div>
+
+    <div class="instrument-card">
+      <div class="instrument-header">
+        <div class="instrument-icon">🎹</div>
+        <div>
+          <div class="instrument-name">Piano</div>
+          <div class="instrument-element">Atmospheric — No Combat Element</div>
+        </div>
+      </div>
+      <div class="instrument-desc">Present in the music as atmosphere and emotional texture. Cannot be built toward for elemental effects. Its role is entirely sonic — shaping the feel of an area or moment without providing a combat tool.</div>
+      <!-- Audio: songs/examples/piano_example.ogg -->
+    </div>
+
+    <h2 class="subsection" id="harmony">System 3: Harmony</h2>
+    <p>Sometimes, multiple instruments will sync up, so there will be harmonies. These do more damage and use different elements based on the instruments which make up those harmonies.</p>
+    <ul>
+      <li><strong>2 instruments:</strong> Small coloured beam attack</li>
+      <li><strong>3 instruments:</strong> Medium coloured beam attack</li>
+      <li><strong>4+ instruments:</strong> A massive, rainbow beam covers the enemy and when it fades, the enemy is gone. (unless it is a boss fight, then it just does a sizeable chunk of damage)</li>
+    </ul>
+    <p>Each instrument's element has its own colour, so it is easy to tell what elements are being used in the harmony.</p>
+    <!-- Audio: songs/examples/harmony_example.ogg -->
+
+    <div class="img-slot" data-img="images/combat/harmony_beam.png" data-caption="Harmony Attack — 4+ Instrument Rainbow Beam">
+      <div class="img-slot-label">Combat — Harmony Attack <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+      <div class="img-slot-placeholder">images/combat/harmony_beam.png<span>Full rainbow harmony beam crossing the screen</span></div>
+    </div>
+
+    <h2 class="subsection" id="mirrorworld">System 4: The Mirror World</h2>
+    <p>A parallel dimension to the real world, accessible through reflective surfaces. It is similar to the real world, but certain ruins may be intact in the mirror world which aren't in reality, or certain artefacts are only available in the mirror world.</p>
+    <h3 class="subsub">Access Rules</h3>
+    <ul>
+      <li><strong>Thin boundary areas</strong> — Ancient ruins, caves, temples. Usually in places made of mirrored stone.</li>
+      <li><strong>Thick boundary areas</strong> — Ordinary places such as the houses and taverns. The mirror world cannot reach inside of them.</li>
+    </ul>
+    <h3 class="subsub">What Happens Inside The Mirror World</h3>
+    <ul>
+      <li><strong>0–2 minutes:</strong> Cold blue palette, distorted audio. Explorable and manageable.</li>
+      <li><strong>2 minutes:</strong> Creepy whispers start.</li>
+      <li><strong>2.5 minutes:</strong> Howls and shrieks start.</li>
+      <li><strong>3 minutes:</strong> The Still Regard enters and begins hunting the player. It can follow the player back into the real world.</li>
+    </ul>
+    <h3 class="subsub">The Still Regard</h3>
+    <p>A lizard creature covered in eyes. In the mirror world, its eyes are open and shoot beams — it takes more damage. In the real world, its eyes are closed — it takes less damage.</p>
+    <p>Its bestiary entry, written by the past character who encountered it once before: <em>"Freaky lizard... thing (???)"</em> accompanied by a bad sketch.</p>
+    <h3 class="subsub">Guardian Eyes</h3>
+    <p>Floating red eyes which can shoot beams, like the eyes on The Still Regard. They get closer and closer throughout the game, as if something had sent them.</p>
+    <h3 class="subsub">Mirror World Diegetic Indicators</h3>
+    <p>There is no timer shown. The mirror world communicates danger entirely through the world itself:</p>
+    <ul>
+      <li><strong>Shadow distortion:</strong> The character's shadow grows increasingly wrong the longer they stay, stretching at impossible angles, moving slightly out of sync. At two and a half minutes it begins moving independently of the player. It also tries to move away from The Still Regard, as if it is afraid.</li>
+      <li><strong>Reflection lag:</strong> The player character's reflection in mirrors begins to lag slightly behind real movement as the timer progresses — a fraction of a second at first, but it increasingly slows down and changes appearance. By three minutes it is clearly wrong.</li>
+    </ul>
+    <!-- audio player: songs/examples/mirrorworld_example.ogg -->
+
+    <div class="img-grid">
+      <div class="img-slot" data-img="images/mirror/mirror_world_palette.png" data-caption="Mirror World — Colour Palette Contrast">
+        <div class="img-slot-label">Mirror World — Palette <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+        <div class="img-slot-placeholder">images/mirror/mirror_world_palette.png<span>Real world warm tones vs mirror world cold blue/purple</span></div>
+      </div>
+      <div class="img-slot" data-img="images/mirror/still_regard.png" data-caption="The Still Regard">
+        <div class="img-slot-label">Mirror World — The Creature <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+        <div class="img-slot-placeholder">images/mirror/still_regard.png<span>The Still Regard — the eye-covered creature</span></div>
+      </div>
+    </div>
+    <h2 class="subsection" id="stealth">System 5: Stealth</h2>
+    <p>The player can also cloak themselves using the mirror world. This makes them invisible to enemies in the normal world.</p>
+    <ul>
+      <li><strong>0–30 seconds:</strong> Fully invisible</li>
+      <li><strong>30 seconds:</strong> Guardian eyes sense the player and surround them</li>
+      <li><strong>35 seconds:</strong> Guardian eyes alert nearby enemies</li>
+      <li><strong>45 seconds:</strong> Guardian eyes begin shooting beams, dealing damage</li>
+    </ul>
+    <p>When the player surfaces, the guardian eyes disperse back into them, a visual <em>reflection</em> of the player anchoring both worlds together.</p>
+    <h3 class="subsub">Stealth Diegetic Indicators</h3>
+    <p>No stealth timer is shown on screen. The player reads their own character:</p>
+    <ul>
+      <li><strong>Cloak edges:</strong> The cloak becomes faintly visible at the edges as the stealth timer runs down — the cloaking effect degrading in real time. At 30 seconds the edges shimmer slightly. At 45 seconds the whole cloak is visibly unstable.</li>
+      <li><strong>Sword glow:</strong> The sword suppresses its own glow during stealth — dims right down to avoid giving the player away. It brightens again the moment they surface. A player who forgets they are cloaked will notice their sword has gone quiet.</li>
+    </ul>
+
+    <h2 class="subsection" id="puzzles">System 6: Mirror World Puzzles</h2>
+    <p>Many puzzles require the mirror world, and they are in places like temples. The temple gets unlocked in the real world, but in the mirror world it is locked. The player can hear The Still Regard trying to get in, but failing, so the player can stay in the mirror world for as long as they want.</p>
+    <p>The mirror world has certain differences which can add some difficulty to puzzles:</p>
+    <ul>
+      <li><strong>Gravity distortion</strong> — Objects fall sideways, up, and bounce.</li>
+      <li><strong>Mechanism desync</strong> — Moving platforms and doors run on different timing cycles than the ones in the real world.</li>
+    </ul>
+
+    <h2 class="subsection" id="interactivity">3.4 Interactivity</h2>
+    <h3 class="subsub">Action and Feedback</h3>
+    <p>Every on-beat hit produces distinct audio and visual feedback. Missing the beat has a clear response. Elemental activations are visually distinct. Harmony attacks are screen-filling events. Every player action is communicated clearly and immediately.</p>
+    <h3 class="subsub">Short-Term Cognition</h3>
+    <p>The rhythm combat system demands constant short-term attention: which instrument is prominent? Is a harmony approaching? Mirror world navigation adds parallel pressure: how long have I been in here? Can I solve this puzzle before the three-minute threshold?</p>
+    <h3 class="subsub">Long-Term Cognition</h3>
+    <p>Lore entries accumulate across the full game. The bestiary builds over time. Book entries grow more desperate in ways that only make sense in retrospect. Players who pay attention to the music and world are rewarded with recognition at the climax.</p>
+    <h3 class="subsub">Emotional</h3>
+    <p>The book's voice — past-you addressing future-you — is the emotional spine of the game. The opening cutscene shows a deliberate act whose meaning the player cannot understand yet. The mirror world's wrongness escalates incrementally throughout the entire game.</p>
+    <h3 class="subsub">Cultural</h3>
+    <p>The game's music draws influence from and collaboration with independent musicians whose work shaped the audio direction. These contributions are credited in full.</p>
+
+    <h2 class="subsection" id="ux">3.5 User Experience Design</h2>
+
+    <h3 class="subsub">Usability</h3>
+    <p>There are barely any traditional menus, which keeps immersion. The tutorial is skippable, in case it is someone's second playthrough, or they are speedrunning the game.</p>
+    <p>There are barely any inputs. It is always disorienting when you play a new game and it has about 200 actions, so you don't know what key to press, or when. You can also rebind your actions to different keys, in case you are used to different controls. Timing is the only thing that matters.</p>
+
+    <h3 class="subsub">UI</h3>
+    <p>By default, there is no HUD whilst playing. However, for accessibility, you can toggle it to easier see what is happening in the game. The book is the main menu for everything, and is bound to escape.</p>
+
+    <h3 class="subsub">Onboarding and Learning Curve</h3>
+    <p>The game teaches through consequence rather than instruction. The rhythm system is introduced in a low stakes area with slower, simpler enemies before anything dangerous happens.</p>
+
+    <div class="img-slot" data-img="images/ux/difficulty_screen.png" data-caption="Difficulty & Accessibility Settings">
+      <div class="img-slot-label">UX — Settings Page <span style="float:right;color:var(--gold);font-size:10px;letter-spacing:0.15em;">CONCEPT ART</span></div>
+      <div class="img-slot-placeholder">images/ux/difficulty_screen.png<span>The book foreword page showing difficulty and accessibility options</span></div>
+    </div>
+
+    <h3 class="subsub">Scalable Difficulty</h3>
+    <p>The difficulty is not the traditional number format. There is no reason why, I just wanted to be different. It goes: Relaxed, Easy, Medium, Hard, Extreme.</p>
+    <p>The difficulty can be changed at any time, and the default difficulty is Medium. These are the things the difficulty affects:</p>
+    <ul>
+      <li><strong>Beat Window</strong> — Relaxed is 300ms, Easy is 250ms, Medium is 200ms, Hard is 150ms, and Extreme is 75ms. The smaller the window, the less time you have to hit to the beat of the music. (These are temporary, I don't know what actually feels fast/slow)</li>
+      <li><strong>Mirror World Timer</strong> — How long before the bad stuff happens (eyes, Still Regard appearing). Extreme is 2 mins until It appears, and Relaxed is 5 mins until It appears.</li>
+      <li><strong>Enemy Aggression</strong> — How frequently and decisively enemies engage.</li>
+    </ul>
+
+    <h3 class="subsub">Accessibility</h3>
+    <p>All accessibility options are toggleable individually through one of the book's pages.</p>
+    <ul>
+      <li><strong>Text size</strong> — book text and UI text scalable independently.</li>
+      <li><strong>Subtitles</strong> — Vocal tone interactions display emotional intent and power in text (e.g. <em>[threatening]</em>, <em>[friendly]</em>) for players who cannot distinguish pitch differences.</li>
+      <li><strong>Reduced motion</strong> — harmonies flashing suddenly, and mirror world distortion can be reduced without affecting gameplay.</li>
+      <li><strong>HUD</strong> — To easier see what is happening in the game.</li>
+    </ul>
+
+    <h3 class="subsub">Flow State</h3>
+    <p>The rhythm system is structurally designed to produce flow. The music sets the pace — the player does not control the tempo, only their responses to it. The five-hit elemental build creates a short feedback loop inside a longer combat loop: each hit is satisfying, the activation is more satisfying, and the harmony — unpredictable and natural — is the peak. The difficulty sliders maintain flow across skill levels without changing the game's atmosphere or narrative.</p>
+
+    <hr class="divider">
+
+  </div><!-- /content -->
+</main>
+
+<footer>
+  Bound Memories — Game Design Document &nbsp;·&nbsp; School Submission
+</footer>
+
+<a href="#top" class="scroll-top" title="Back to top">↑</a>
+
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
